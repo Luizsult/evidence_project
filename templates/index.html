@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Картотека улик: главная
+{% endblock %}
+
+{% block body %}
+<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary mytext">
+    <h1 class="fst-italic">Добавление улики</h1>
+    <form method="post">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Введите название"><br>
+        <textarea name="description" id="description" class="form-control" placeholder="Введите описание"></textarea><br>
+        <input type="number" name="number_case" id="number_case" class="form-control" placeholder="Введите номер дела"><br>
+        <div class="mb-3">
+            <label for="date_find" class="form-label">Дата обнаружения</label>
+            <input type="date" name="date_find" id="date_find" class="form-control">
+        </div>
+        <input type="submit" class="btn btn-success" value="Добавить">
+    </form>
+</div>
+{% endblock %}

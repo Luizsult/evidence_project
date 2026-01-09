@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование
+{% endblock %}
+
+{% block body %}
+
+<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary mytext">
+    <h1 class="fst-italic">Редактирование улики</h1>
+    <form method="post">
+        <input type="text" name="title" id="title" class="form-control" value="{{evidence_id.title }}" placeholder="Введите название"><br>
+        <textarea name="description" id="description" class="form-control" placeholder="Введите описание">{{evidence_id.description }}</textarea><br>
+        <input type="number" name="number_case" id="number_case" class="form-control" value="{{evidence_id.number_case }}" placeholder="Введите номер дела"><br>
+        <div class="mb-3">
+            <label for="date_find" class="form-label">Дата обнаружения</label>
+            <input type="date" name="date_find" id="date_find" class="form-control" value="{{evidence_id.date_find.strftime('%Y-%m-%d') }}">
+        </div>
+        <input type="submit" class="btn btn-outline-success btn-sm" value="Сохранить">
+        <a href="/redact/{{ evidence_id.id }}/del" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash me-1"></i>Удалить</a>
+    </form>
+</div>
+{% endblock %}
